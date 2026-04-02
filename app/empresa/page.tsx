@@ -1,5 +1,6 @@
 import BannerImg from "@/components/BannerImg";
 import OwnClients from "@/components/OwnClients";
+import Image from "next/image";
 
 export default function EmpresaPage() {
   return (
@@ -12,7 +13,7 @@ export default function EmpresaPage() {
       />
       <section>
         <div className="container about_us_first_container">
-          <div className="row mb-4 containerBoxes">
+          <div className="row mb-4 containerBoxes company-layout">
             <div className="col-lg-8 mb-5">
               <span>Nuestro compromiso con la calidad</span>
               <h3>
@@ -54,26 +55,30 @@ export default function EmpresaPage() {
               </article>
             </div>
             <div className="col-lg-4 mb-5">
-              <img src="/assets/empresa/2.jpg" alt="Equipo Q&C" />
+              <Image src="/assets/empresa/2.jpg" alt="Equipo Q&C" width={640} height={820} />
             </div>
-            <div className="col-12 col-lg-6 boxVision mt-5">
-              <span>Vision</span>
-              <p>
-                Ser una empresa reconocida a nivel nacional por entregar
-                soluciones de revestimiento industrial confiables, duraderas y
-                adaptadas a cada necesidad, contribuyendo al mantenimiento,
-                seguridad y vida util de las superficies en diversas industrias.
-              </p>
+            <div className="col-12 col-lg-6 mt-5 mission-vision-card">
+              <div className="boxVision">
+                <span>Vision</span>
+                <p>
+                  Ser una empresa reconocida a nivel nacional por entregar
+                  soluciones de revestimiento industrial confiables, duraderas y
+                  adaptadas a cada necesidad, contribuyendo al mantenimiento,
+                  seguridad y vida util de las superficies en diversas industrias.
+                </p>
+              </div>
             </div>
-            <div className="col-12 col-lg-6 boxMision mt-5">
-              <span>Mision</span>
-              <p>
-                Brindar soluciones en revestimientos industriales que respondan
-                de manera eficiente, segura y oportuna a las necesidades
-                especificas de cada cliente, asegurando la calidad del trabajo,
-                la durabilidad de las superficies y el cumplimiento de las
-                normativas tecnicas y de seguridad aplicables.
-              </p>
+            <div className="col-12 col-lg-6 mt-5 mission-vision-card">
+              <div className="boxMision">
+                <span>Mision</span>
+                <p>
+                  Brindar soluciones en revestimientos industriales que respondan
+                  de manera eficiente, segura y oportuna a las necesidades
+                  especificas de cada cliente, asegurando la calidad del trabajo,
+                  la durabilidad de las superficies y el cumplimiento de las
+                  normativas tecnicas y de seguridad aplicables.
+                </p>
+              </div>
             </div>
           </div>
         </div>

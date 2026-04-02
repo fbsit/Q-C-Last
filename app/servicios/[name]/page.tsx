@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import Breadcrumbs from "@/components/Breadcrumb";
@@ -66,22 +67,22 @@ export default function ServicioDetailPage() {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4 gallery-int">
               <div id="panel" className="panel">
-                <a>
-                  <img src={activeImage} alt={servicio.title} />
-                </a>
+                <Image src={activeImage} alt={servicio.title} width={900} height={700} />
               </div>
               <div id="imagenPequena-int" className="d-flex">
                 {detailImages.map((image, index) => (
                   <div key={image} className="containerImagen">
                     <div className="cajaImg">
-                      <a
+                      <button
+                        type="button"
                         onClick={(event) => {
                           event.preventDefault();
                           setActiveImage(image);
                         }}
+                        style={{ border: 0, background: 'transparent', padding: 0 }}
                       >
-                        <img src={image} alt={`${servicio.title} ${index + 1}`} />
-                      </a>
+                        <Image src={image} alt={`${servicio.title} ${index + 1}`} width={220} height={160} />
+                      </button>
                     </div>
                   </div>
                 ))}

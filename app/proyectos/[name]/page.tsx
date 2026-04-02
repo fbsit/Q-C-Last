@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumb";
 import OwnClients from "@/components/OwnClients";
 import proyectos from "@/utils/proyectosData";
@@ -48,13 +49,13 @@ if (!proyecto) {
             </div>
             <div className="col-lg-6 gallery-int">
               <div id="panel">
-                <a>
-                  <img
-                    className={proyecto.rotateRight ? "rotate-right" : ""}
-                    src={proyecto.img}
-                    alt={proyecto.title}
-                  />
-                </a>
+                <Image
+                  className={proyecto.rotateRight ? "rotate-right" : ""}
+                  src={proyecto.img}
+                  alt={proyecto.title}
+                  width={1100}
+                  height={800}
+                />
               </div>
             </div>
           </div>

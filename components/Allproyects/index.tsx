@@ -3,6 +3,7 @@
 import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Image } from "@/components/Common/Image";
+import Link from "next/link";
 
 const AllProyects = () => {
 
@@ -35,7 +36,7 @@ const AllProyects = () => {
     ]
 
     return (
-        <section style={{ backgroundColor: '#f1f1f1'}}>
+        <section className="projects-home-section">
             <div className="container descriptionQC">
               <div className="pleft">
                 <span>Proyectos</span>
@@ -91,7 +92,7 @@ const AllProyects = () => {
                 </div>
               </div>
               <div className="text-center">
-                <a className="btn-gris">Te invitamos a conocernos</a>
+                <Link className="btn-gris" href="/proyectos">Ver todos los proyectos</Link>
               </div>
             </div>
         </section>

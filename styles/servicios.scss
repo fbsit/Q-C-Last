@@ -106,3 +106,82 @@
     top: 25%;
     min-height: auto;
 }
+
+/* Redesign layer */
+.services_first {
+    padding-top: 56px;
+}
+
+.services_first .containerBoxes h3 {
+    font-size: clamp(1.9rem, 2.9vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 34px;
+    text-align: center;
+}
+
+.services_first .containerBoxes > .col-12 > span,
+.services_first .containerBoxes > .col-12 > h3 {
+    display: block;
+    text-align: center;
+}
+
+.services_first .containerBoxes p {
+    color: #4b5563;
+    line-height: 1.75;
+}
+
+.services_second {
+    padding-bottom: 72px;
+}
+
+.services_second .containerBoxes {
+    padding: 14px 4px;
+}
+
+.services_second .containerBoxes .descriptionBox {
+    margin-bottom: 24px;
+}
+
+.services_second .containerBoxes .descriptionBox .containerOrangeBox {
+    display: block;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 20px 40px -32px rgba(15, 23, 38, 0.55);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.services_second .containerBoxes .descriptionBox .containerOrangeBox:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 44px -28px rgba(15, 23, 38, 0.6);
+}
+
+.services_second .containerBoxes .descriptionBox .block-image {
+    border-top: 0;
+    height: 260px;
+}
+
+.services_second .containerBoxes .descriptionBox .service-img {
+    height: 260px;
+    min-height: 260px;
+}
+
+.services_second .containerBoxes .descriptionBox .orangeBox {
+    position: static;
+    width: 100%;
+    left: auto;
+    bottom: auto;
+    max-height: unset;
+    height: auto;
+    background: linear-gradient(180deg, #ff7a1f 0%, #ef5d00 100%);
+    box-shadow: none;
+    padding: 18px 16px;
+}
+
+.services_second .containerBoxes .descriptionBox .orangeBox h3 {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}

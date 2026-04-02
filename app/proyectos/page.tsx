@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import BannerImg from "@/components/BannerImg";
 import OwnClients from "@/components/OwnClients";
 import proyectos from "@/utils/proyectosData";
@@ -46,10 +47,12 @@ export default function ProyectosPage() {
                         <div className="descriptionBox">
                           <div className="hover-proyect-img">
                             <div>
-                              <img
+                              <Image
                                 className={project.rotateRight ? "rotate-right" : ""}
                                 src={project.img}
                                 alt={project.title}
+                                width={900}
+                                height={720}
                               />
                             </div>
                           </div>
@@ -59,9 +62,11 @@ export default function ProyectosPage() {
                               <span className="locacion">{project.ubication}</span>
                             </div>
                             <div className="col-3 col-lg-2">
-                              <img
+                              <Image
                                 src="https://www.katemu.com/wp-content/themes/Katemu_theme/images/arrow-box.png"
                                 alt="Flecha"
+                                width={36}
+                                height={36}
                               />
                             </div>
                           </div>

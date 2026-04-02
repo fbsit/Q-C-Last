@@ -60,7 +60,7 @@ export default function ContactoPage() {
         className="contacto-banner"
       />
       <section>
-        <div className="container contact_first">
+        <div className="container contact_first contact-page">
           <div className="row mb-4 containerBoxes">
             <div className="col-lg-6 no-padding">
               <span>Contactanos</span>
@@ -114,7 +114,7 @@ export default function ContactoPage() {
                       type="text"
                       placeholder="Ej: Rodrigo Alejandro"
                     />
-                    {errors.first_name && <span>{errors.first_name.message}</span>}
+                    {errors.first_name && <span className="field-error">{errors.first_name.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
                     <label>Apellidos</label>
@@ -124,7 +124,7 @@ export default function ContactoPage() {
                       type="text"
                       placeholder="Ej: Hernandez Gonzales"
                     />
-                    {errors.last_name && <span>{errors.last_name.message}</span>}
+                    {errors.last_name && <span className="field-error">{errors.last_name.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
                     <label>Correo electronico</label>
@@ -134,7 +134,7 @@ export default function ContactoPage() {
                       type="text"
                       placeholder="Ej: nombre@correo.cl"
                     />
-                    {errors.email && <span>{errors.email.message}</span>}
+                    {errors.email && <span className="field-error">{errors.email.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
                     <label>Telefono</label>
@@ -144,7 +144,7 @@ export default function ContactoPage() {
                       type="text"
                       placeholder="Ej: 987654321"
                     />
-                    {errors.phone && <span>{errors.phone.message}</span>}
+                    {errors.phone && <span className="field-error">{errors.phone.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
                     <label>Metros cuadrados</label>
@@ -154,7 +154,7 @@ export default function ContactoPage() {
                       <option>Entre 5.000 M2 a 15.000 M2</option>
                       <option>Mayor de 15.001 M2</option>
                     </select>
-                    {errors.mcuadrados && <span>{errors.mcuadrados.message}</span>}
+                    {errors.mcuadrados && <span className="field-error">{errors.mcuadrados.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
                     <label>Region</label>
@@ -166,7 +166,7 @@ export default function ContactoPage() {
                       <option value="VIII Region del Biobio">VIII Region del Biobio</option>
                       <option value="XVI Region de Nuble">XVI Region de Nuble</option>
                     </select>
-                    {errors.region && <span>{errors.region.message}</span>}
+                    {errors.region && <span className="field-error">{errors.region.message}</span>}
                   </div>
                   <div className="form-group">
                     <label>Asunto</label>
@@ -186,7 +186,7 @@ export default function ContactoPage() {
                         Revestimientos / tratamientos superficiales
                       </option>
                     </select>
-                    {errors.asunto && <span>{errors.asunto.message}</span>}
+                    {errors.asunto && <span className="field-error">{errors.asunto.message}</span>}
                   </div>
                   <div className="form-group">
                     <label>Comentario</label>
@@ -196,7 +196,7 @@ export default function ContactoPage() {
                       {...register("comentario")}
                       placeholder="Comentario"
                     />
-                    {errors.comentario && <span>{errors.comentario.message}</span>}
+                    {errors.comentario && <span className="field-error">{errors.comentario.message}</span>}
                   </div>
                   <div className="text-centrado">
                     <button type="submit" className="btn-gris">

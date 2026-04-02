@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import BannerImg from "@/components/BannerImg";
 import OwnClients from "@/components/OwnClients";
 
@@ -99,7 +100,7 @@ export default function ServiciosPage() {
                     <div key={service.url} className="descriptionBox col-12 col-sm-6 col-lg-4">
                       <Link href={`/servicios/${service.url}`} className="containerOrangeBox">
                         <div className="block-image">
-                          <img className="service-img" src={service.image} alt={service.title} />
+                          <Image className="service-img" src={service.image} alt={service.title} width={860} height={580} />
                         </div>
                         <div className="orangeBox row">
                           <div className="col-12">

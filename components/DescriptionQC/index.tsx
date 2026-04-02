@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const DescriptionQC = () => {
 
     const boxes = [
@@ -46,10 +49,7 @@ const DescriptionQC = () => {
                   { boxes.map( (box, index) => {
                       return (
                         <div key={box.title} className={`col-12 col-sm-6 col-md-6 col-lg-6 descriptionBox ${index === 2 ? 'focus-top' : ''}`}>
-                            <img
-                            src={box.image}
-                            alt={box.title}
-                            />
+                            <Image src={box.image} alt={box.title} width={980} height={660} />
                             <div className="orangeBox">
                                 <h3>{box.title}</h3>
                                 <p>{box.description}</p>
@@ -60,7 +60,7 @@ const DescriptionQC = () => {
                 </div>
               </div>
               <div className="text-center" style={{ clear: 'both', margin: '0 auto'}}>
-                <a className="btn-gris">Te invitamos a conocernos</a>
+                <Link className="btn-gris" href="/empresa">Te invitamos a conocernos</Link>
               </div>
             </div>
         </section>
