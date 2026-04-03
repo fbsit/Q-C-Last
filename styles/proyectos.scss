@@ -198,3 +198,224 @@
     color: rgba(255, 255, 255, 0.84);
     font-size: 14px;
 }
+
+.project-gallery {
+    padding: 26px;
+}
+
+.project-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.project-gallery__item {
+    appearance: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 38, 0.08);
+    background: #ffffff;
+    box-shadow: 0 16px 34px -28px rgba(15, 23, 38, 0.55);
+    cursor: pointer;
+}
+
+.project-gallery__image {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.28s ease;
+}
+
+.project-gallery__item:hover .project-gallery__image {
+    transform: scale(1.03);
+}
+
+.project-gallery__caption {
+    display: block;
+    height: 12px;
+    background: linear-gradient(180deg, #ff7a1f 0%, #ef5d00 100%);
+}
+
+.project-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.project-lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(2, 6, 15, 0.88);
+}
+
+.project-lightbox__content {
+    position: relative;
+    z-index: 1;
+    width: min(1200px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-lightbox__viewer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr) 54px;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-lightbox__image-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #0f172a;
+    touch-action: pan-y;
+}
+
+.project-lightbox__image {
+    display: block;
+    width: 100%;
+    height: min(78vh, 840px);
+    object-fit: contain;
+    background: #0f172a;
+}
+
+.project-lightbox__counter {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.7);
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 12px;
+    font-family: "Montserrat-SemiBold", sans-serif;
+}
+
+.project-lightbox__close {
+    position: absolute;
+    top: -42px;
+    right: 0;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-family: "Montserrat-SemiBold", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-lightbox__nav {
+    border: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    font-size: 38px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-lightbox__thumbs {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px;
+}
+
+.project-lightbox__thumb {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.35);
+    padding: 0;
+    flex: 0 0 88px;
+    overflow: hidden;
+    opacity: 0.72;
+}
+
+.project-lightbox__thumb.is-active {
+    border-color: #ff6b00;
+    opacity: 1;
+    box-shadow: 0 0 0 1px rgba(255, 107, 0, 0.45);
+}
+
+.project-lightbox__thumb-img {
+    display: block;
+    width: 100%;
+    height: 64px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 991px) {
+    .project-gallery__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .project-gallery {
+        padding: 14px;
+    }
+
+    .project-gallery__grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .project-gallery__image {
+        height: 220px;
+    }
+
+    .project-lightbox {
+        padding: 12px;
+    }
+
+    .project-lightbox__content {
+        gap: 8px;
+    }
+
+    .project-lightbox__viewer {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 6px;
+    }
+
+    .project-lightbox__close {
+        top: -38px;
+        padding: 7px 10px;
+    }
+
+    .project-lightbox__nav {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+
+    .project-lightbox__image {
+        height: min(70vh, 520px);
+    }
+
+    .project-lightbox__thumb {
+        flex-basis: 76px;
+    }
+
+    .project-lightbox__thumb-img {
+        height: 56px;
+    }
+}

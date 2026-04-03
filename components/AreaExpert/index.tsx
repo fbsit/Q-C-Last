@@ -5,24 +5,24 @@ const areas = [
     image: 'https://www.katemu.com/wp-content/uploads/2020/01/Pisos-y-Pavimentos-Industriales-1.svg',
     title: 'Pavimentos Industriales',
     description:
-      'Soluciones de alto rendimiento para espacios sometidos a cargas pesadas y trafico constante.',
+      'Soluciones de alto rendimiento para espacios sometidos a cargas pesadas y tráfico constante.',
   },
   {
     image: 'https://www.katemu.com/wp-content/uploads/2020/01/Pisos-y-Pavimentos-comerciales-decorativos.svg',
     title: 'Pisos Comerciales y Decorativos',
     description:
-      'Acabados esteticos y funcionales para entornos comerciales, oficinas y espacios publicos.',
+      'Acabados estéticos y funcionales para entornos comerciales, oficinas y espacios públicos.',
   },
   {
     image: 'https://www.katemu.com/wp-content/uploads/2020/01/Revestimientos-tratamientos-superficiales.svg',
     title: 'Revestimientos para pisos',
-    description: 'Proteccion duradera frente a agentes quimicos, humedad y desgaste mecanico.',
+    description: 'Protección duradera frente a agentes químicos, humedad y desgaste mecánico.',
   },
   {
     image: 'https://www.katemu.com/wp-content/uploads/2020/01/Agroindustria.svg',
     title: 'Mantencion y reparacion de superficies',
     description:
-      'Intervenciones tecnicas para prolongar la vida util de los pavimentos y restaurar areas danadas.',
+      'Intervenciones técnicas para prolongar la vida útil de los pavimentos y restaurar áreas dañadas.',
   },
 ];
 
@@ -32,7 +32,7 @@ const AreaExpert = () => {
       <div className="container contenido-boxes">
         <div className="text-center section-heading">
           <span>Nuestra especialidad</span>
-          <h2>Areas donde somos expertos</h2>
+          <h2>Áreas donde somos expertos</h2>
         </div>
         <div className="row g-4 area-expert-grid">
           {areas.map((expert) => (

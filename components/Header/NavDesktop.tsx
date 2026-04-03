@@ -4,13 +4,35 @@ import { faEnvelopeSquare, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "@/components/Common/Logo";
 
 const NavDesktop = () => {
   const [showMenuMobile, setShowMenuMobile] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    document.body.style.overflow = showMenuMobile ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showMenuMobile]);
+
+  useEffect(() => {
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setShowMenuMobile(false);
+      }
+    };
+
+    window.addEventListener("keydown", onEscape);
+
+    return () => {
+      window.removeEventListener("keydown", onEscape);
+    };
+  }, []);
 
   const links = [
     { href: "/", label: "Inicio" },
@@ -26,6 +48,10 @@ const NavDesktop = () => {
     }
 
     return pathname.startsWith(href);
+  };
+
+  const closeMobileMenu = () => {
+    setShowMenuMobile(false);
   };
 
   return (
@@ -72,14 +98,15 @@ const NavDesktop = () => {
           <button
             className={`navbar-toggler ${!showMenuMobile ? "collapsed" : ""}`}
             type="button"
-            onClick={() => {
-              setShowMenuMobile(!showMenuMobile);
-            }}
+            aria-label={showMenuMobile ? "Cerrar menu" : "Abrir menu"}
+            aria-expanded={showMenuMobile}
+            aria-controls="mobile-nav-sidebar"
+            onClick={() => setShowMenuMobile(!showMenuMobile)}
           >
             <span className="navbar-toggler-icon" />
           </button>
           <div
-            className={`collapse navbar-collapse navbar-collapse-shell ${showMenuMobile ? "show" : ""}`}
+            className="navbar-collapse navbar-collapse-shell d-none d-lg-flex"
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-end navbar-links">
@@ -89,14 +116,13 @@ const NavDesktop = () => {
                     href={link.href}
                     className={`nav-link ${isActive(link.href) ? "is-active" : ""}`}
                     aria-current={isActive(link.href) ? "page" : undefined}
-                    onClick={() => setShowMenuMobile(false)}
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
               <li className="nav-item nav-item--cta">
-                <Link href="/contacto" className="btn-orange btn-orange--sm" onClick={() => setShowMenuMobile(false)}>
+                <Link href="/contacto" className="btn-orange btn-orange--sm">
                   Cotizar
                 </Link>
               </li>
@@ -105,6 +131,44 @@ const NavDesktop = () => {
         </div>
       </nav>
     </header>
+
+    <div
+      className={`mobile-menu-backdrop ${showMenuMobile ? "is-visible" : ""}`}
+      aria-hidden={!showMenuMobile}
+      onClick={closeMobileMenu}
+    />
+
+    <aside
+      id="mobile-nav-sidebar"
+      className={`mobile-menu-sidebar ${showMenuMobile ? "is-open" : ""}`}
+      aria-hidden={!showMenuMobile}
+    >
+      <div className="mobile-menu-sidebar__header">
+        <span>Menu</span>
+        <button type="button" className="mobile-menu-sidebar__close" onClick={closeMobileMenu}>
+          Cerrar
+        </button>
+      </div>
+      <ul className="navbar-nav navbar-links mobile-menu-sidebar__links">
+        {links.map((link) => (
+          <li className="nav-item" key={`mobile-${link.href}`}>
+            <Link
+              href={link.href}
+              className={`nav-link ${isActive(link.href) ? "is-active" : ""}`}
+              aria-current={isActive(link.href) ? "page" : undefined}
+              onClick={closeMobileMenu}
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+        <li className="nav-item nav-item--cta">
+          <Link href="/contacto" className="btn-orange btn-orange--sm" onClick={closeMobileMenu}>
+            Cotizar
+          </Link>
+        </li>
+      </ul>
+    </aside>
     </>
   );
 };

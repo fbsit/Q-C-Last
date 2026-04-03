@@ -24,14 +24,14 @@ export default function Home() {
         <div className="container home-hero__container">
           <div className="home-hero__content">
             <p className="home-hero__eyebrow">Q&C Revestimientos</p>
-            <h1>Superficies industriales que duran, operan y destacan.</h1>
+            <h1>Superficies industriales que perduran, operan y destacan.</h1>
             <p>
-              Disenamos y ejecutamos soluciones de pavimentos y revestimientos con foco en
-              continuidad operacional, seguridad y calidad certificada.
+              Diseñamos y ejecutamos soluciones de pavimentos y revestimientos, con enfoque en la continuidad
+              operacional, la seguridad y una calidad certificada.
             </p>
             <div className="home-hero__actions">
               <Link className="btn-orange" href="/contacto">
-                Solicitar evaluacion
+                Solicitar evaluación
               </Link>
               <Link className="btn-gris" href="/proyectos">
                 Ver proyectos

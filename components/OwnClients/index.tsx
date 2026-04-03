@@ -35,7 +35,7 @@ const OwnClients = () => {
         <section>
           <div className="trustQC clients-section">
             <div className="container">
-                <p className="text-center">Empresas que confian en Q&C</p>
+                <p className="text-center">Empresas que confían en Q&C</p>
                 <div className="content-fluid">
                     <Swiper
                         modules={[Autoplay, Navigation, Pagination, Scrollbar]}

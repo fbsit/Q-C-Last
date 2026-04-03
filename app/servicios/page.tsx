@@ -1,11 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import BannerImg from "@/components/BannerImg";
 import OwnClients from "@/components/OwnClients";
 
-const services = [
+type ServiceItem = {
+  title: string;
+  image: string;
+  url: string;
+  portrait?: boolean;
+};
+
+const services: ServiceItem[] = [
   {
-    title: "REVESTIMIENTOS EPOXICOS INDUSTRIALES Y POLIURETANO",
+    title: "REVESTIMIENTOS EPÓXICOS INDUSTRIALES Y POLIURETANO",
     image: "/assets/servicios/revestimiento3.jpg",
     url: "revestimientos-epoxicos-industriales-y-poliuretano",
   },
@@ -15,19 +23,21 @@ const services = [
     url: "pulido-de-pisos-superfloor",
   },
   {
-    title: "APLICACION DE POLIUREA",
+    title: "APLICACIÓN DE POLIUREA",
     image: "/assets/servicios/poli3.jpg",
     url: "aplicacion-de-poliurea",
+    portrait: true,
   },
   {
-    title: "REPARACION Y RECUPERACION DE SUPERFICIES",
+    title: "REPARACIÓN Y RECUPERACIÓN DE SUPERFICIES",
     image: "/assets/servicios/repa3.jpg",
     url: "reparacion-y-recuperacion-de-superficies",
   },
   {
-    title: "IMPERMEABILIZACION DE CUBIERTAS",
+    title: "IMPERMEABILIZACIÓN DE CUBIERTAS",
     image: "/assets/servicios/imper3.png",
     url: "impermeabilizacion-de-cubiertas",
+    portrait: true,
   },
   {
     title: "REVESTIMIENTOS METACRILATOS",
@@ -38,6 +48,7 @@ const services = [
     title: "PULIDO DE PISOS",
     image: "/assets/servicios/pulidos3.jpg",
     url: "pulido-de-pisos",
+    portrait: true,
   },
   {
     title: "REVESTIMIENTO DE ESTRUCTURAS",
@@ -50,7 +61,7 @@ const services = [
     url: "pisos-comerciales-y-decorativos",
   },
   {
-    title: "PROTECCION TERMO-ACUSTICA",
+    title: "PROTECCIÓN TERMOACÚSTICA",
     image: "/assets/servicios/termino3.jpg",
     url: "proteccion-termo-acustica",
   },
@@ -70,7 +81,7 @@ export default function ServiciosPage() {
           <div className="row mb-4 containerBoxes">
             <div className="col-12 col-lg-6">
               <span>Una completa gama de servicios</span>
-              <h3>Servicios integrales con respaldo tecnico</h3>
+              <h3>Servicios integrales con respaldo técnico</h3>
             </div>
             <div className="d-none d-lg-block col-lg-6">
               <div className="banner-text">
@@ -80,8 +91,8 @@ export default function ServiciosPage() {
                   abarcando todas las etapas de un proyecto.
                 </p>
                 <p>
-                  Desde el diseno y planificacion hasta la ejecucion,
-                  reparacion y evaluacion final, trabajamos con seriedad y
+                  Desde el diseño y planificación hasta la ejecución,
+                  reparación y evaluación final, trabajamos con seriedad y
                   responsabilidad para asegurar resultados concretos y
                   duraderos.
                 </p>
@@ -95,17 +106,28 @@ export default function ServiciosPage() {
           <div className="row">
             <div className="col-12">
               <div className="boxService containerBoxes">
-                <div className="row">
+                <div className="row align-items-stretch">
                   {services.map((service) => (
                     <div key={service.url} className="descriptionBox col-12 col-sm-6 col-lg-4">
                       <Link href={`/servicios/${service.url}`} className="containerOrangeBox">
-                        <div className="block-image">
-                          <Image className="service-img" src={service.image} alt={service.title} width={860} height={580} />
+                        <div
+                          className={`block-image ${service.portrait ? "block-image--portrait" : ""}`}
+                          style={
+                            service.portrait
+                              ? ({ "--service-bg": `url(${service.image})` } as CSSProperties)
+                              : undefined
+                          }
+                        >
+                          <Image
+                            className={`service-img ${service.portrait ? "service-img--portrait" : ""}`}
+                            src={service.image}
+                            alt={service.title}
+                            width={860}
+                            height={580}
+                          />
                         </div>
-                        <div className="orangeBox row">
-                          <div className="col-12">
-                            <h3>{service.title}</h3>
-                          </div>
+                        <div className="orangeBox">
+                          <h3>{service.title}</h3>
                         </div>
                       </Link>
                     </div>

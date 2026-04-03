@@ -33,17 +33,17 @@ if (!proyecto) {
                 <p>{proyecto.description}</p>
               </article>
               <div className="boxBeneficios">
-                <span>Informacion del proyecto</span>
+                <span>Información del proyecto</span>
                 <div className="row">
                   <ul>
                     <li>Empresa: Q&C Revestimientos</li>
-                    <li>Ubicacion: {proyecto.ubication}</li>
+                    <li>Ubicación: {proyecto.ubication}</li>
                   </ul>
                 </div>
               </div>
               <div className="text-xs-center">
                 <Link href="/contacto" className="btn-gris">
-                  Solicitar una cotizacion
+                  Solicitar una cotización
                 </Link>
               </div>
             </div>

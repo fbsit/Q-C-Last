@@ -9,11 +9,11 @@ import YupValidationResolver from "@/utils/YupValidationResolver";
 const validationSchema = yup.object({
   first_name: yup
     .string()
-    .min(3, "No cumple con los caracteres minimos (3)")
+    .min(3, "No cumple con los caracteres mínimos (3)")
     .required("Este campo es requerido"),
   last_name: yup
     .string()
-    .min(3, "No cumple con los caracteres minimos (3)")
+    .min(3, "No cumple con los caracteres mínimos (3)")
     .required("Este campo es requerido"),
   email: yup
     .string()
@@ -21,7 +21,7 @@ const validationSchema = yup.object({
     .required("Este campo es requerido"),
   phone: yup
     .string()
-    .min(8, "No cumple con los caracteres minimos (8)")
+    .min(8, "No cumple con los caracteres mínimos (8)")
     .required("Este campo es requerido"),
   mcuadrados: yup.string().required("Este campo es requerido"),
   region: yup.string().required("Este campo es requerido"),
@@ -63,26 +63,26 @@ export default function ContactoPage() {
         <div className="container contact_first contact-page">
           <div className="row mb-4 containerBoxes">
             <div className="col-lg-6 no-padding">
-              <span>Contactanos</span>
+              <span>Contáctanos</span>
               <h3>
                 Y descubre la calidad y durabilidad de los revestimientos Q&C.
               </h3>
               <article>
                 <p>
-                  Contactanos y danos la oportunidad de apoyarte con tu proximo
-                  proyecto. Envianos tus datos y un representante te contactara
-                  para entregarte la mejor asesoria adaptada a tu necesidad.
+                  Contáctanos y danos la oportunidad de apoyarte con tu próximo
+                  proyecto. Envíanos tus datos y un representante te contactará
+                  para entregarte la mejor asesoría adaptada a tu necesidad.
                 </p>
               </article>
               <div className="boxDatos">
                 <span>Datos de contacto</span>
                 <div className="row">
                   <div className="col-4 col-lg-4 text-center">
-                    <span>Direccion</span>
-                    <p>Janequeo N1650, Concepcion, Biobio, Chile</p>
+                    <span>Dirección</span>
+                    <p>Janequeo N° 1650, Concepción, Biobío, Chile</p>
                   </div>
                   <div className="col-4 col-lg-4 text-center">
-                    <span>Telefono</span>
+                    <span>Teléfono</span>
                     <p>
                       +569 67691262
                       <br />
@@ -90,7 +90,7 @@ export default function ContactoPage() {
                     </p>
                   </div>
                   <div className="col-4 col-lg-4 text-center">
-                    <span>Correo electronico</span>
+                    <span>Correo electrónico</span>
                     <p>
                       epincheira@qyc.cl
                       <br />
@@ -103,7 +103,7 @@ export default function ContactoPage() {
             <div className="col-lg-6 form-bg">
               <form className="formContacto" onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">
-                  <span className="col-lg-12">Contactenos:</span>
+                  <span className="col-lg-12">Contáctenos:</span>
                 </div>
                 <div className="row">
                   <div className="form-group col-sm-12 col-md-6">
@@ -122,12 +122,12 @@ export default function ContactoPage() {
                       className="form-control"
                       {...register("last_name")}
                       type="text"
-                      placeholder="Ej: Hernandez Gonzales"
+                      placeholder="Ej: Hernández González"
                     />
                     {errors.last_name && <span className="field-error">{errors.last_name.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
-                    <label>Correo electronico</label>
+                    <label>Correo electrónico</label>
                     <input
                       className="form-control"
                       {...register("email")}
@@ -137,7 +137,7 @@ export default function ContactoPage() {
                     {errors.email && <span className="field-error">{errors.email.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
-                    <label>Telefono</label>
+                    <label>Teléfono</label>
                     <input
                       className="form-control"
                       {...register("phone")}
@@ -157,14 +157,14 @@ export default function ContactoPage() {
                     {errors.mcuadrados && <span className="field-error">{errors.mcuadrados.message}</span>}
                   </div>
                   <div className="form-group col-sm-12 col-md-6">
-                    <label>Region</label>
+                    <label>Región</label>
                     <select className="form-control" {...register("region")}>
                       <option value="">--</option>
-                      <option value="Region Metropolitana de Santiago">
-                        Region Metropolitana de Santiago
+                      <option value="Región Metropolitana de Santiago">
+                        Región Metropolitana de Santiago
                       </option>
-                      <option value="VIII Region del Biobio">VIII Region del Biobio</option>
-                      <option value="XVI Region de Nuble">XVI Region de Nuble</option>
+                      <option value="VIII Región del Biobío">VIII Región del Biobío</option>
+                      <option value="XVI Región de Ñuble">XVI Región de Ñuble</option>
                     </select>
                     {errors.region && <span className="field-error">{errors.region.message}</span>}
                   </div>
@@ -173,7 +173,7 @@ export default function ContactoPage() {
                     <select className="form-control" {...register("asunto")}>
                       <option value="">--</option>
                       <option value="Mantencion y Reparacion">
-                        Mantencion y Reparacion
+                        Mantención y Reparación
                       </option>
                       <option value="Mediciones">Mediciones</option>
                       <option value="Pisos y pavimentos comerciales / decorativos">
@@ -207,11 +207,11 @@ export default function ContactoPage() {
               </form>
             </div>
             <div className="col-12 mt-5">
-              <h3>Nuestra ubicacion</h3>
+              <h3>Nuestra ubicación</h3>
               <iframe
                 width="100%"
                 height="340"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1593.0823837337054!2d-73.15955713501306!3d-37.0058653965143!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669c6b876995773%3A0x4807f1885e229a59!2sQyC+Quimicos+y+Complementos.!5e0!3m2!1ses-419!2scl!4v1520200792272"
+                src="https://www.google.com/maps?q=Janequeo+1650,+Concepcion,+Biobio,+Chile&z=15&output=embed"
                 frameBorder={0}
                 allowFullScreen={false}
                 style={{ border: "0px", borderImage: "none", pointerEvents: "none" }}

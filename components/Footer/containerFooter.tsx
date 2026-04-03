@@ -14,7 +14,7 @@ const ContainerFooter = () => {
               Soluciones de revestimiento y mantenimiento industrial para proyectos de alta exigencia.
             </p>
             <div className="social-media mt-3 mb-3" aria-label="Redes sociales de Q&C">
-              <span>Seguinos en</span>
+              <span>Síguenos en</span>
               <a className="ref-icon" href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
                 <Image src="/assets/face.png" alt="Facebook" width={13} height={13} />
               </a>
@@ -28,26 +28,13 @@ const ContainerFooter = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 text-center text-lg-start footer-info-col">
             <div className="footer-list">
-              <h3>Concepcion</h3>
+              <h3>Concepción</h3>
               <ul>
                 <li>
-                  Janequeo N1650, Concepcion, Biobio, Chile
+                  Janequeo N1650, Concepción, Biobío, Chile
                 </li>
                 <li>
-                  <a href="tel:+56412222222">+56 41 222 2222</a>
-                </li>
-              </ul>
-            </div> 
-          </div>
-          <div className="col-12 col-md-6 col-lg-3 text-center text-lg-start footer-info-col">
-            <div className="footer-list">
-              <h3>Chile</h3>
-              <ul>
-                <li>
-                  Camino de la Colina 1455, Huechuraba, Santiago - Chile
-                </li>
-                <li>
-                  <a href="mailto:contacto@qyc.cl">contacto@qyc.cl</a>
+                  <a href="tel:+56412222222">+56 967691262</a>
                 </li>
               </ul>
             </div> 

@@ -140,16 +140,27 @@
 
 .services_second .containerBoxes .descriptionBox {
     margin-bottom: 24px;
+    display: flex;
+    min-height: 0;
 }
 
 .services_second .containerBoxes .descriptionBox .containerOrangeBox {
     display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
     border-radius: 18px;
     overflow: hidden;
-    border: 1px solid #e2e8f0;
+    border: 0;
     background: #ffffff;
     box-shadow: 0 20px 40px -32px rgba(15, 23, 38, 0.55);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.projects-home-section .btn-gris {
+    font-weight: 800;
 }
 
 .services_second .containerBoxes .descriptionBox .containerOrangeBox:hover {
@@ -159,29 +170,70 @@
 
 .services_second .containerBoxes .descriptionBox .block-image {
     border-top: 0;
-    height: 260px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
 }
 
 .services_second .containerBoxes .descriptionBox .service-img {
-    height: 260px;
-    min-height: 260px;
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.services_second .containerBoxes .descriptionBox .block-image--portrait {
+    position: relative;
+    background: #e4e9f0;
+}
+
+.services_second .containerBoxes .descriptionBox .block-image--portrait::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--service-bg);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.08);
+    filter: blur(12px);
+    opacity: 0.4;
+}
+
+.services_second .containerBoxes .descriptionBox .service-img--portrait {
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+    object-position: center center;
 }
 
 .services_second .containerBoxes .descriptionBox .orangeBox {
     position: static;
     width: 100%;
+    margin: 0;
     left: auto;
     bottom: auto;
     max-height: unset;
+    min-height: 0;
     height: auto;
+    display: flex;
+    align-items: center;
     background: linear-gradient(180deg, #ff7a1f 0%, #ef5d00 100%);
     box-shadow: none;
-    padding: 18px 16px;
+    justify-content: center;
+    padding: 18px 12px;
 }
 
 .services_second .containerBoxes .descriptionBox .orangeBox h3 {
     margin: 0;
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 1.25;
     letter-spacing: 0.02em;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

@@ -36,7 +36,7 @@ export default function ServicioDetailPage() {
 
   return (
     <>
-      <Breadcrumbs section="servicios" currentPage={servicio.title} />
+      <Breadcrumbs section="servicios" currentPage={servicio.title} className="marginHeaderBreadcrumbs--service-detail" />
       <section>
         <div className="container containerInfo service-detail-container">
           <div className="row">
@@ -61,7 +61,7 @@ export default function ServicioDetailPage() {
               </div>
               <div className="text-xs-center">
                 <Link href="/contacto" className="btn-gris">
-                  Solicitar una cotizacion
+                  Solicitar una cotización
                 </Link>
               </div>
             </div>

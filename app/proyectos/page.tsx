@@ -1,10 +1,36 @@
-import Link from "next/link";
-import Image from "next/image";
 import BannerImg from "@/components/BannerImg";
 import OwnClients from "@/components/OwnClients";
-import proyectos from "@/utils/proyectosData";
+import ProjectGallery from "@/components/ProjectGallery";
+import { readdir } from "node:fs/promises";
+import path from "node:path";
 
-export default function ProyectosPage() {
+const getProjectGalleryImages = async () => {
+  const directory = path.join(process.cwd(), "public", "assets", "proyectos");
+  const files = await readdir(directory);
+
+  return files
+    .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
+    .sort((a, b) => {
+      const aMatch = a.match(/\((\d+)\)/);
+      const bMatch = b.match(/\((\d+)\)/);
+      const aNum = aMatch ? Number(aMatch[1]) : 0;
+      const bNum = bMatch ? Number(bMatch[1]) : 0;
+
+      if (aNum !== bNum) {
+        return aNum - bNum;
+      }
+
+      return a.localeCompare(b, "es");
+    })
+    .map((file) => ({
+      file,
+      src: encodeURI(`/assets/proyectos/${file}`),
+    }));
+};
+
+export default async function ProyectosPage() {
+  const galleryImages = await getProjectGalleryImages();
+
   return (
     <>
       <BannerImg
@@ -22,11 +48,11 @@ export default function ProyectosPage() {
             <div className="col-lg-6 d-none d-lg-block">
               <div className="banner-text">
                 <p>
-                  Cada proyecto es ejecutado con estrictos controles tecnicos,
-                  maquinaria especializada y los mas altos estandares de calidad.
+                  Cada proyecto es ejecutado con estrictos controles técnicos,
+                  maquinaria especializada y los más altos estándares de calidad.
                 </p>
                 <p>
-                  Aplicamos normas internacionales NACE-SSPC en la preparacion
+                  Aplicamos normas internacionales NACE-SSPC en la preparación
                   de superficies, garantizando resultados duraderos y
                   funcionales.
                 </p>
@@ -37,46 +63,8 @@ export default function ProyectosPage() {
       </section>
       <section>
         <div className="container proyect_second">
-          <div className="row">
-            <div className="col-12">
-              <div className="boxService containerBoxes">
-                <div className="row">
-                  {proyectos.map((project) => (
-                    <div key={project.slug} className="col-12 col-sm-12 col-lg-6">
-                      <Link href={`/proyectos/${project.slug}`}>
-                        <div className="descriptionBox">
-                          <div className="hover-proyect-img">
-                            <div>
-                              <Image
-                                className={project.rotateRight ? "rotate-right" : ""}
-                                src={project.img}
-                                alt={project.title}
-                                width={900}
-                                height={720}
-                              />
-                            </div>
-                          </div>
-                          <div className="description row">
-                            <div className="col-9 col-lg-10">
-                              <p>{project.title}</p>
-                              <span className="locacion">{project.ubication}</span>
-                            </div>
-                            <div className="col-3 col-lg-2">
-                              <Image
-                                src="https://www.katemu.com/wp-content/themes/Katemu_theme/images/arrow-box.png"
-                                alt="Flecha"
-                                width={36}
-                                height={36}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="containerBoxes project-gallery">
+            <ProjectGallery images={galleryImages} />
           </div>
         </div>
       </section>
