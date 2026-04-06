@@ -9,8 +9,10 @@ const OwnClients = () => {
     const banners = [
         '/assets/clientes/c1.png',
         '/assets/clientes/c2.png',
+        '/assets/clientes/c3.png',
         '/assets/clientes/3.png',
         '/assets/clientes/c4.png',
+        '/assets/clientes/c5.png',
         '/assets/clientes/5.jpg',
         '/assets/clientes/c6.png',
         '/assets/clientes/c7.png',
@@ -29,6 +31,10 @@ const OwnClients = () => {
         '/assets/clientes/20.png',
         '/assets/clientes/21.png',
         '/assets/clientes/22.png',
+        '/assets/clientes/alimar.png',
+        '/assets/clientes/aquachile.png',
+        '/assets/clientes/gildemeister.png',
+        '/assets/clientes/mdcasino.png',
     ]
 
     return (

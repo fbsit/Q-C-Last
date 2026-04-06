@@ -1,9 +1,9 @@
-@import './navbar.scss';
-@import 'empresa.scss';
-@import 'servicios.scss';
-@import 'servicio.scss';
-@import 'proyectos.scss';
-@import 'contacto.scss';
+@use './navbar.scss';
+@use 'empresa.scss';
+@use 'servicios.scss';
+@use 'servicio.scss';
+@use 'proyectos.scss';
+@use 'contacto.scss';
 
 html,
 body {
