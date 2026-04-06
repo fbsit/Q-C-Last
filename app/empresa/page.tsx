@@ -18,11 +18,11 @@ export default function EmpresaPage() {
               <span>Nuestro compromiso con la calidad</span>
               <h3>
                 Nuestra trayectoria nos posiciona como referentes en
-                revestimientos de pisos en Chile
+                revestimiento industrial en Chile
               </h3>
               <article>
                 <p>
-                  Con más de 18 años de trayectoria en el rubro, nuestra empresa
+                  Con más de 20 años de trayectoria en el rubro, nuestra empresa
                   se ha consolidado como un referente en soluciones de
                   revestimiento y pisos de hormigón a nivel nacional. Nuestra
                   experiencia abarca diversos sectores productivos, destacando
