@@ -20,7 +20,7 @@ const areas = [
   },
   {
     image: 'https://www.katemu.com/wp-content/uploads/2020/01/Agroindustria.svg',
-    title: 'Mantencion y reparacion de superficies',
+    title: 'Mantención y reparación de superficies',
     description:
       'Intervenciones técnicas para prolongar la vida útil de los pavimentos y restaurar áreas dañadas.',
   },

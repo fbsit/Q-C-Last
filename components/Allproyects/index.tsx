@@ -7,33 +7,19 @@ import Link from "next/link";
 
 const AllProyects = () => {
 
-    const banners = [
-        {
-            image: {
-                web: '/assets/proyectos/1.jpg'
-            }
+    const featuredProjectFiles = [
+        "Fotografía (1).jpg",
+        "Fotografía (2).jpg",
+        "Fotografía (3).jpg",
+        "Fotografía (4).jpg",
+        "Fotografía (5).jpg",
+    ];
+
+    const banners = featuredProjectFiles.map((file) => ({
+        image: {
+            web: encodeURI(`/assets/proyectos/${file}`),
         },
-        {
-            image: {
-                web: '/assets/proyectos/2.jpg'
-            }
-        },
-        {
-            image: {
-                web: '/assets/proyectos/3.jpg'
-            }
-        },
-        {
-            image: {
-                web: '/assets/proyectos/4.jpg'
-            }
-        },
-        {
-            image: {
-                web: '/assets/proyectos/5.jpg'
-            }
-        }
-    ]
+    }));
 
     return (
         <section className="projects-home-section">

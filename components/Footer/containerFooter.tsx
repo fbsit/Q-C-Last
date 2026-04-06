@@ -31,7 +31,7 @@ const ContainerFooter = () => {
               <h3>Concepción</h3>
               <ul>
                 <li>
-                  Janequeo N1650, Concepción, Biobío, Chile
+                  Janequeo N° 1650, Concepción, Biobío, Chile
                 </li>
                 <li>
                   <a href="tel:+56412222222">+56 967691262</a>

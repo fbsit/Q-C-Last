@@ -172,7 +172,7 @@ export default function ContactoPage() {
                     <label>Asunto</label>
                     <select className="form-control" {...register("asunto")}>
                       <option value="">--</option>
-                      <option value="Mantencion y Reparacion">
+                      <option value="Mantención y Reparación">
                         Mantención y Reparación
                       </option>
                       <option value="Mediciones">Mediciones</option>
